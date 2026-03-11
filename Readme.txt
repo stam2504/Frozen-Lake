@@ -1,38 +1,36 @@
-# FrozenLake RL Agent
+# FrozenLake RL Agent ❄️🤖
 
-## Overview
+An implementation of Reinforcement Learning agents in the **FrozenLake-v1** environment (OpenAI Gym/Farama Foundation) using **Stable-Baselines3** and a **Flask** interaction API.
 
-This project involves training and evaluating reinforcement learning agents on the FrozenLake-v1 environment using DQN and PPO algorithms from stable-baselines3. Additionally, a custom reward wrapper was implemented to modify the reward structure.
+## 📌 Overview
+This project focuses on training and comparing two core Reinforcement Learning algorithms: **DQN** (Deep Q-Network) and **PPO** (Proximal Policy Optimization). It includes a custom Reward Wrapper designed to improve convergence and handle the sparse reward nature of the FrozenLake environment.
 
-## Environment and Algorithm Selection
+## 🛠️ Tech Stack
+* **Environment:** Gymnasium `FrozenLake-v1` (4x4)
+* **RL Framework:** [Stable-Baselines3](https://stable-baselines3.readthedocs.io/)
+* **Backend API:** Flask (for real-time agent interaction)
+* **Monitoring:** TensorBoard
 
-- **Environment**: FrozenLake-v1 (map_name='4x4')
-- **Algorithms**: DQN and PPO
+## 🚀 Environment & Algorithm Selection
+The agents were trained under two different reward structures:
+1.  **Default Reward:** The standard environment reward (1 for reaching the goal, 0 otherwise).
+2.  **Custom Reward Wrapper:** A modified structure to encourage exploration and penalize falling into "holes," accelerating the learning process.
 
-## Training
+### Evaluation Results (100 Episodes)
+| Algorithm | Reward Wrapper | Average Reward | Success Rate |
+| :--- | :--- | :--- | :--- |
+| **DQN** | Original | X | Y% |
+| **DQN** | Custom | X' | Y'% |
+| **PPO** | Original | A | B% |
+| **PPO** | Custom | A' | B'% |
 
-The agents were trained using the default reward structure and a custom reward wrapper. The training curves were saved using TensorBoard.
+> **Conclusion:** Based on the results, **[Algorithm Name]** performed better in this environment due to **[e.g., better handling of stochasticity / faster convergence with the custom wrapper]**.
 
-## Evaluation
+## 💻 Instructions
 
-The agents were evaluated by interacting with the environment through a Flask API. The average reward and success rate over 100 episodes were calculated.
-
-## Results
-
-- **DQN**: Average Reward: X, Success Rate: Y
-- **PPO**: Average Reward: A, Success Rate: B
-
-## Reward Wrapper
-
-A custom reward wrapper was implemented to modify the reward structure. The agents were retrained and the results compared to the original reward structure.
-
-## Conclusion
-
-Based on the results, [algorithm] performed better for this environment due to [reasons].
-
-## Instructions
-
-1. Install dependencies: `pip install -r requirements.txt`
-2. Train the agents: `python train_agents.py`
-3. Start the API server: `python FrozenLakeAPI_structure.py`
-4. Evaluate the agents
+### 1. Installation
+Clone the repository and install the necessary dependencies:
+```bash
+git clone [https://github.com/your-username/frozenlake-rl.git](https://github.com/your-username/frozenlake-rl.git)
+cd frozenlake-rl
+pip install -r requirements.txt
